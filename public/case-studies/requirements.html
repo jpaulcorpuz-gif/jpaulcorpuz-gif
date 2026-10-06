@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Enrollment requirements - John Paul Corpuz</title>
+<title>Requirement tracking and reminders - John Paul Corpuz</title>
 <meta name="robots" content="noindex">
 <style>
   :root {
@@ -67,7 +67,15 @@
   ul.list { padding-left: 20px; margin: 8px 0 0; color: var(--muted); }
   ul.list li { margin: 4px 0; }
   footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
-  @media (max-width: 560px) { .meta { grid-template-columns: 1fr; } }
+  figure { margin: 22px 0 8px; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+  figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
+  .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+  .stats div { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+  .stats b { display: block; font-size: 24px; letter-spacing: -.01em; color: var(--accent); }
+  .stats span { color: var(--muted); font-size: 14px; }
+  h3 { font-size: 16px; margin: 22px 0 6px; }
+  @media (max-width: 560px) { .meta, .stats { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -76,35 +84,46 @@
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9 1.5V5h4"/></svg>
       <span>Case study</span>
     </span>
-    <h1>Enrollment requirements</h1>
-    <p class="lede">How students get from registered to ready at CAL ACE Nursing Academy: every required document checked, and anything missing followed up.</p>
+    <h1>Requirement tracking and reminders</h1>
+    <p class="lede">How CAL ACE keeps every student’s Live Scan, TB test, physical, CDPH 283B and onboarding on track, without tracking any of it by memory.</p>
 
     <div class="meta">
       <div><span>Client</span><b>CAL ACE Nursing Academy</b></div>
-      <div><span>Since</span><b>June 2025</b></div>
-      <div><span>Role</span><b>Admin staff</b></div>
+      <div><span>Role</span><b>Product owner / system designer</b></div>
+      <div><span>Stack</span><b>Apps Script · Sheets · Stripe</b></div>
     </div>
 
-    <h2><i>01</i>The requirements</h2>
-    <p>Each student needs a valid ID, a TB test and a physical exam before they can be enrolled.</p>
-    <div class="flow" aria-label="Flow">
-      <span>ID</span><em>&rarr;</em>
-      <span>TB test</span><em>&rarr;</em>
-      <span>Physical exam</span><em>&rarr;</em>
-      <span class="on">Ready to enroll</span>
-    </div>
-
-    <h2><i>02</i>What I do</h2>
-    <p>I verify each student’s documents and follow up on anything missing, and I help prospective and enrolled students with registration, payments and enrollment requirements by call, text and email.</p>
-
-    <h2><i>03</i>What gets checked</h2>
+    <h2><i>01</i>What every student needs</h2>
     <ul class="list">
-      <li>ID</li>
+      <li>Live Scan background clearance</li>
       <li>TB test</li>
-      <li>Physical exam</li>
+      <li>Physical examination</li>
+      <li>CDPH 283B form</li>
+      <li>Valid photo ID</li>
+      <li>Student orientation and onboarding</li>
     </ul>
 
-    <footer>John Paul Corpuz · CRM Developer · jpaul.corpuz@gmail.com</footer>
+    <h2><i>02</i>Seeing what is missing</h2>
+<p>Each requirement is a color-coded chip on the roster: green when cleared, red when still due. Filters pull up everyone missing a given requirement across the whole school.</p>
+    <figure>
+      <img src="../work/tracker.webp" alt="Payments, 283B / Live Scan, requirements, attendance and exams, one row per student." loading="lazy">
+      <figcaption>Payments, 283B / Live Scan, requirements, attendance and exams, one row per student.</figcaption>
+    </figure>
+
+    <h2><i>03</i>Following up</h2>
+    <ul class="list">
+      <li>One click sends a personalized reminder email listing only what that student is missing, with upload links.</li>
+      <li>Students upload their documents from their own dashboard, and the chips update.</li>
+      <li>Rules are cohort-aware: the valid-ID requirement applies only to cohorts starting on or after its effective date.</li>
+    </ul>
+    <div class="flow" aria-label="Flow">
+      <span>Chip shows red</span><em>&rarr;</em>
+      <span>Reminder email</span><em>&rarr;</em>
+      <span>Student uploads</span><em>&rarr;</em>
+      <span class="on">Chip turns green</span>
+    </div>
+
+    <footer>All screenshots use fictional student data. John Paul Corpuz · jpaul.corpuz@gmail.com</footer>
   </main>
 </body>
 </html>

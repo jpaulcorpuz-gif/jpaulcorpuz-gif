@@ -17,7 +17,6 @@ import {
   GraduationCap,
 } from '@/components/slab'
 import { aiStack, type StackNode } from '@/data/ai-stack'
-import { profile } from '@/data/profile'
 
 /**
  * Home's showcase: one card per rail view, each an index of what that view
@@ -29,9 +28,9 @@ import { profile } from '@/data/profile'
  * height and Home stays a single viewport.
  */
 
-// The case studies, rendered by scripts/make-case-thumbs.mjs.
-const PROJECT_SHOTS = ['student-crm', 'stripe-payments', 'enrollment', 'support'].map(
-  (name) => `/home/case-${name}.jpeg`,
+// Screens from the CAL ACE system (fictional student data).
+const PROJECT_SHOTS = ['tracker', 'registration', 'student-record', 'registration-cohort'].map(
+  (name) => `/home/work-${name}.webp`,
 )
 
 const OFFERS = [
@@ -49,8 +48,7 @@ const CLIENTS: { name: string; role: string; work: string; logo?: string }[] = [
 ]
 
 // Three photos of you, fanned. Small copies are fine - the fan shows them under 100px.
-// PLACEHOLDER - swap in your own photos.
-const PHOTOS = [profile.avatarSrc, '/avatar.svg?2', '/avatar.svg?3']
+const PHOTOS = ['/photo-3.webp', '/photo-2.webp', '/photo-1.webp']
 
 /** The AI systems as a flat list: every leaf of the Projects tree, in order. */
 const leaves = (n: StackNode): StackNode[] =>
@@ -88,7 +86,7 @@ export default function HomeBento() {
     <nav className="bento" aria-label="Explore the portfolio">
       {/* Projects: the funnel thumbnails drift upward on a looped track. */}
       <Link to="/projects" className="bento__card bento__card--projects">
-        <CardHead Icon={FolderOpen} title="Projects" desc="CRM, payment and enrollment systems I built." />
+        <CardHead Icon={FolderOpen} title="Projects" desc="The student system I built for a nursing school." />
         <div className="bento__media bento__reel" aria-hidden="true">
           <div className="bento__reel-track">
             {[...PROJECT_SHOTS, ...PROJECT_SHOTS].map((src, i) => (

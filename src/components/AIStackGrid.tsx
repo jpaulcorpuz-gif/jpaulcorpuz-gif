@@ -18,15 +18,21 @@ const T = {
   sheets: { name: 'Google Sheets', src: '/icons/brand/googlesheets.svg' },
   gmail: { name: 'Gmail', src: '/icons/brand/gmail.svg' },
   stripe: { name: 'Stripe', src: '/icons/brand/stripe.svg' },
+  drive: { name: 'Google Drive API', src: '/icons/brand/googledrive.svg' },
 } satisfies Record<string, Tool>
 
 /** What each system runs on. Keyed by the node id in ai-stack.ts. */
 const TOOLS: Record<string, Tool[]> = {
-  'student-crm': [T.appsScript, T.sheets],
-  registration: [T.appsScript, T.sheets],
+  rosters: [T.appsScript, T.sheets],
   requirements: [T.appsScript, T.sheets],
-  'stripe-tuition': [T.stripe, T.appsScript],
-  'student-comms': [T.appsScript, T.gmail],
+  'class-config': [T.appsScript, T.sheets],
+  registration: [T.appsScript],
+  assessment: [T.appsScript],
+  stripe: [T.stripe, T.appsScript],
+  dashboard: [T.appsScript, T.drive],
+  sync: [T.appsScript, T.sheets],
+  reminders: [T.appsScript, T.gmail],
+  letters: [T.appsScript, T.gmail],
 }
 
 /** The platforms everything above is built on. */

@@ -21,15 +21,15 @@ import { X } from '@/components/slab'
 
 type Sample = { file: string; label: string }
 
-// Rendered from public/case-studies/ by scripts/make-case-thumbs.mjs.
+// Screens from the CAL ACE system. All student data shown is fictional.
 const SAMPLES: Sample[] = [
-  { file: 'student-crm.jpeg', label: 'Student CRM case study' },
-  { file: 'stripe-payments.jpeg', label: 'Stripe tuition payments case study' },
-  { file: 'enrollment.jpeg', label: 'Enrollment requirements case study' },
-  { file: 'support.jpeg', label: 'Customer support experience' },
+  { file: 'tracker.webp', label: 'Staff tracker: CNA roster' },
+  { file: 'student-record.webp', label: 'Student record' },
+  { file: 'registration.webp', label: 'Public registration page' },
+  { file: 'registration-cohort.webp', label: 'Cohort picker with live seats' },
 ]
 
-const srcOf = (s: Sample) => `/case-studies/shots/${encodeURIComponent(s.file)}`
+const srcOf = (s: Sample) => `/work/${encodeURIComponent(s.file)}`
 
 export default function WorkflowSamples() {
   const doubled = useMemo(() => [...SAMPLES, ...SAMPLES], [])
@@ -65,7 +65,7 @@ export default function WorkflowSamples() {
   return (
     <section className="wfs" id="workflow-samples" aria-labelledby="wfs-heading" data-reveal>
       <p className="wfs__caption" id="wfs-heading">
-        Short write-ups of my work. Click one to see it full size.
+        The CAL ACE system, with fictional student data. Click a screen to see it full size.
       </p>
 
       <div className="wfs__strip">
@@ -80,7 +80,7 @@ export default function WorkflowSamples() {
                 onClick={(e) => open(s, e.currentTarget)}
                 aria-hidden={clone || undefined}
                 tabIndex={clone ? -1 : undefined}
-                aria-label={clone ? undefined : `Open ${s.label}`}
+                aria-label={clone ? undefined : `Open ${s.label} screenshot`}
               >
                 <span className="wfs__frame-bar" aria-hidden="true">
                   <span className="wfs__dot wfs__dot--r" />

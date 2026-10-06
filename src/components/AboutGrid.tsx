@@ -75,8 +75,8 @@ export default function AboutGrid() {
 
           <p className="agrid__note">
             <strong>CAL ACE Nursing Academy</strong>, a CDPH-approved CNA school in Milpitas,
-            California, is where I build and run the student CRM in Google Apps Script and the
-            Stripe automation for tuition. Before that: nearly four years in BPO support at
+            California, is where I designed and built its student management system: a CRM, an
+            enrollment website and a Stripe payment pipeline, all on Google Workspace. Before that: nearly four years in BPO support at
             Eclaro and Alorica, and 10+ years in customer-facing roles overall.
           </p>
 
@@ -139,12 +139,12 @@ export default function AboutGrid() {
 
         <div className="agrid__portrait">
           <img
-            src="/avatar.svg"
-            alt="Portrait of John Paul Corpuz"
+            src={profile.hero.portraitSrc}
+            alt={profile.hero.portraitAlt}
             loading="eager"
             decoding="async"
-            width={400}
-            height={400}
+            width={800}
+            height={996}
           />
         </div>
       </div>

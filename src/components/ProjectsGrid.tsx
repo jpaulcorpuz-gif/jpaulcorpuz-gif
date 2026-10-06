@@ -52,13 +52,13 @@ const DRIVE = '/icons/brand/googledrive.svg'
 /** The three smaller builds: each its own card in the stack, each its own
  *  pop-up. */
 const BUILDS: Project[] = [
-  { id: 'ticketing', cat: 'work', index: '03', kicker: 'Payments', title: 'Stripe tuition payments', desc: 'Registration fees and installment plans, paid through Stripe and tied to the CRM.', Icon: () => <Ticket size={20} weight="duotone" />, logos: [STRIPE], eyebrow: 'Case study', Section: TicketingPanel, Preview: () => null },
-  { id: 'framework', cat: 'work', index: '04', kicker: 'Enrollment', title: 'Enrollment requirements', desc: 'ID, TB test and physical exam checked for every student, with follow-ups on anything missing.', Icon: () => <Robot size={20} weight="duotone" />, logos: [DRIVE], eyebrow: 'Case study', Section: FrameworkPanel, Preview: () => null },
+  { id: 'ticketing', cat: 'work', index: '03', kicker: 'Enrollment', title: 'Enrollment website', desc: 'Live seat counts, a waitlist, an English assessment and Stripe payments, straight into the roster.', Icon: () => <Ticket size={20} weight="duotone" />, logos: [STRIPE, APPS_SCRIPT], eyebrow: 'Case study', Section: TicketingPanel, Preview: () => null },
+  { id: 'framework', cat: 'work', index: '04', kicker: 'Requirements', title: 'Requirement tracking', desc: 'Live Scan, TB, physical and 283B as color chips, with one-click reminders for what is missing.', Icon: () => <Robot size={20} weight="duotone" />, logos: [DRIVE], eyebrow: 'Case study', Section: FrameworkPanel, Preview: () => null },
   { id: 'workflow', cat: 'work', index: '05', kicker: 'Support', title: 'Customer support', desc: 'SLA-based tickets, pricing data and telco support at Eclaro and Alorica.', Icon: () => <FlowArrow size={20} weight="duotone" />, logos: [ZENDESK], eyebrow: 'Experience', Section: WorkflowPanel, Preview: () => null },
 ]
 
-const CASE_SHOTS = ['student-crm', 'stripe-payments', 'enrollment', 'support'].map(
-  (name) => `/home/case-${name}.jpeg`,
+const CASE_SHOTS = ['tracker', 'registration', 'student-record', 'registration-cohort'].map(
+  (name) => `/home/work-${name}.webp`,
 )
 
 const leaves = (n: StackNode): StackNode[] => (n.children?.length ? n.children.flatMap(leaves) : [n])
@@ -85,12 +85,12 @@ function PlanPreview() {
   return (
     <div className="bento__media bento__doc" aria-hidden="true">
       <span className="bento__doc-eyebrow">Case study</span>
-      <span className="bento__doc-title">Student CRM in Google Apps Script.</span>
+      <span className="bento__doc-title">CAL ACE Student Management System.</span>
       <span className="bento__doc-flow">
         <i>Register</i>
-        <i>Record</i>
+        <i>Pay</i>
         <i>Docs?</i>
-        <i className="is-on">Enrolled</i>
+        <i className="is-on">Placed</i>
       </span>
       <span className="bento__doc-line" />
       <span className="bento__doc-line bento__doc-line--short" />
@@ -121,8 +121,8 @@ function AIPreview() {
 
 const PROJECTS: Project[] = [
   { id: 'ai', cat: 'ai', index: '01', title: 'Automations', desc: 'The CRM, registration, payment and email automations I run for a California nursing academy.', Icon: SparkIcon, logos: [APPS_SCRIPT, SHEETS, GMAIL], eyebrow: 'Automations', Section: AIWindow, span: 2, Preview: AIPreview },
-  { id: 'plan', cat: 'work', index: '02', title: 'Student CRM', desc: 'Registration, records and communication for a CNA school, built in Google Apps Script.', Icon: PlanIcon, logos: [APPS_SCRIPT], eyebrow: 'Case study', Section: PlanPanel, Preview: PlanPreview },
-  { id: 'cases', cat: 'work', index: '06', title: 'Case studies', desc: 'Short write-ups of the CRM, the Stripe payments, enrollment and my support work.', Icon: FlowIcon, eyebrow: 'Case studies', Section: AutomationsPanel, span: 4, Preview: CasesPreview },
+  { id: 'plan', cat: 'work', index: '02', title: 'Student Management System', desc: 'A CRM, enrollment site and payment pipeline for a nursing school. Zero duplicate data entry.', Icon: PlanIcon, logos: [APPS_SCRIPT], eyebrow: 'Case study', Section: PlanPanel, Preview: PlanPreview },
+  { id: 'cases', cat: 'work', index: '06', title: 'The system, in screens', desc: 'The staff tracker, a student record and the public registration site. All student data shown is fictional.', Icon: FlowIcon, eyebrow: 'Screenshots', Section: AutomationsPanel, span: 4, Preview: CasesPreview },
 ]
 
 /** The icon tile, or the real marks stacked horizontally in its place. */
@@ -256,9 +256,9 @@ export default function ProjectsGrid() {
       <header className="pgrid__head">
         <span className="pgrid__eyebrow">Projects</span>
         <h1 className="pgrid__title" id="projects-title">
-          The systems behind a nursing school’s front office.
+          The system that runs a nursing school’s front office.
         </h1>
-        <p className="pgrid__lede">A student CRM, Stripe payments and the enrollment work around them. Open a card to read the case study.</p>
+        <p className="pgrid__lede">A student CRM, enrollment website and Stripe pipeline I designed for CAL ACE. Open a card for the case study.</p>
       </header>
 
       {phone && (

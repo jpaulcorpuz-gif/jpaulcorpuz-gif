@@ -48,14 +48,14 @@ export const profile: Profile = {
   firstName: 'John Paul',
   handle: '@jpaulcorpuz',
   role: 'CRM Developer · Workflow Automation',
-  avatarSrc: '/avatar.svg',
+  avatarSrc: '/avatar.webp',
   verifiedLabel: 'BS Information Technology, AMA Computer College',
   email: 'jpaul.corpuz@gmail.com',
   location: 'Caloocan City, Philippines',
   // Pick any icon from https://phosphoricons.com and import it above.
   stats: [
     { value: '10+ yrs', label: 'Customer-facing', Icon: Briefcase },
-    { value: 'Stripe', label: 'Payment automation', Icon: SealCheck },
+    { value: '2,200+', label: 'CE registrations', Icon: SealCheck },
     { value: 'GMT+8', label: 'Remote, US team', Icon: Clock },
   ],
   // The intro types this line, then flies it into the Home headline.
@@ -63,12 +63,11 @@ export const profile: Profile = {
   displayName: { line1: 'CRMs, automation,', line2: 'and real support.' },
   hero: {
     body: 'I build Google Apps Script CRMs and Stripe automations, and handle the admin and customer support around them.',
-    portraitSrc: '/avatar.svg',
+    portraitSrc: '/portrait.webp',
     portraitAlt: 'Portrait of John Paul Corpuz',
   },
-  // PLACEHOLDER - paste your real profile links. A '#' link goes nowhere.
   socials: [
-    { label: 'Facebook profile', href: '#', iconPath: '/icons/facebook.svg' },
-    { label: 'LinkedIn profile', href: '#', iconPath: '/icons/linkedin.svg' },
+    { label: 'LinkedIn profile', href: 'https://www.linkedin.com/in/john-paul-corpuz/', iconPath: '/icons/linkedin.svg' },
+    { label: 'Facebook profile', href: 'https://www.facebook.com/paul.corpuzii.5', iconPath: '/icons/facebook.svg' },
   ],
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stripe tuition payments - John Paul Corpuz</title>
+<title>Enrollment website and Stripe payments - John Paul Corpuz</title>
 <meta name="robots" content="noindex">
 <style>
   :root {
@@ -67,7 +67,15 @@
   ul.list { padding-left: 20px; margin: 8px 0 0; color: var(--muted); }
   ul.list li { margin: 4px 0; }
   footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
-  @media (max-width: 560px) { .meta { grid-template-columns: 1fr; } }
+  figure { margin: 22px 0 8px; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+  figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
+  .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+  .stats div { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+  .stats b { display: block; font-size: 24px; letter-spacing: -.01em; color: var(--accent); }
+  .stats span { color: var(--muted); font-size: 14px; }
+  h3 { font-size: 16px; margin: 22px 0 6px; }
+  @media (max-width: 560px) { .meta, .stats { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -76,37 +84,42 @@
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9 1.5V5h4"/></svg>
       <span>Case study</span>
     </span>
-    <h1>Stripe tuition payments</h1>
-    <p class="lede">A Stripe payment automation for tuition at CAL ACE Nursing Academy, covering registration fees and installment plans.</p>
+    <h1>Enrollment website and Stripe payments</h1>
+    <p class="lede">The public side of the CAL ACE system: students pick a cohort, take a short English assessment, pay through Stripe and land on the roster, with no staff typing in between.</p>
 
     <div class="meta">
       <div><span>Client</span><b>CAL ACE Nursing Academy</b></div>
-      <div><span>Since</span><b>June 2025</b></div>
-      <div><span>Built with</span><b>Stripe · Apps Script</b></div>
+      <div><span>Role</span><b>Product owner / system designer</b></div>
+      <div><span>Stack</span><b>Apps Script · Sheets · Stripe</b></div>
     </div>
 
-    <h2><i>01</i>The need</h2>
-    <p>Students pay a registration fee and tuition, and many pay tuition in installments. Each payment has to land on the right student.</p>
+    <h2><i>01</i>Registration</h2>
+<p>Students fill the form out once. It creates their student account, puts them on the roster for the start date they pick, and tells the Registrar which clinical group to hold for them.</p>
+    <figure>
+      <img src="../work/registration-cohort.webp" alt="Choosing a cohort: schedule, start date and clinical site, with live seats left." loading="lazy">
+      <figcaption>Choosing a cohort: schedule, start date and clinical site, with live seats left.</figcaption>
+    </figure>
 
-    <h2><i>02</i>What I built</h2>
-    <p>A Stripe automation that handles tuition payments, including registration fees and installment plans, connected to the student CRM.</p>
-    <div class="flow" aria-label="Flow">
-      <span>Registration fee</span><em>&rarr;</em>
-      <span>Pay in full or installments</span><em>&rarr;</em>
-      <span class="on">Recorded in the CRM</span>
-    </div>
+    <h2><i>02</i>Live seats and waitlist</h2>
+<p>Every cohort shows a live seat counter, computed from the actual roster. When a cohort fills, the site moves new registrants to the waitlist automatically. Staff open, close and resize cohorts from the tracker’s Class Configuration tab, and the website follows instantly.</p>
 
-    <h2><i>03</i>What it handles</h2>
+    <h2><i>03</i>Assessment and payment</h2>
     <ul class="list">
-      <li>Registration fees</li>
-      <li>Full tuition payments</li>
-      <li>Installment plans</li>
+      <li>A built-in English reading assessment before payment. Low scores are flagged for staff, not used to reject anyone.</li>
+      <li>Stripe payments for registration fees and tuition, including installment plans, with automatic receipts.</li>
     </ul>
+    <div class="flow" aria-label="Flow">
+      <span>Pick a cohort</span><em>&rarr;</em>
+      <span>English assessment</span><em>&rarr;</em>
+      <span>Pay with Stripe</span><em>&rarr;</em>
+      <span>Receipt sent</span><em>&rarr;</em>
+      <span class="on">On the roster</span>
+    </div>
 
-    <h2><i>04</i>Around it</h2>
-    <p>I also answer students’ payment questions by call, text and email.</p>
+    <h2><i>04</i>After registering</h2>
+<p>Students log in to a dashboard to upload their valid photo ID, TB test and physical, check which requirements are still open, and see their balance.</p>
 
-    <footer>John Paul Corpuz · CRM Developer · jpaul.corpuz@gmail.com</footer>
+    <footer>All screenshots use fictional student data. John Paul Corpuz · jpaul.corpuz@gmail.com</footer>
   </main>
 </body>
 </html>

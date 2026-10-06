@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Student CRM in Google Apps Script - John Paul Corpuz</title>
+<title>CAL ACE Student Management System - John Paul Corpuz</title>
 <meta name="robots" content="noindex">
 <style>
   :root {
@@ -67,7 +67,15 @@
   ul.list { padding-left: 20px; margin: 8px 0 0; color: var(--muted); }
   ul.list li { margin: 4px 0; }
   footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
-  @media (max-width: 560px) { .meta { grid-template-columns: 1fr; } }
+  figure { margin: 22px 0 8px; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+  figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
+  .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+  .stats div { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+  .stats b { display: block; font-size: 24px; letter-spacing: -.01em; color: var(--accent); }
+  .stats span { color: var(--muted); font-size: 14px; }
+  h3 { font-size: 16px; margin: 22px 0 6px; }
+  @media (max-width: 560px) { .meta, .stats { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -76,41 +84,71 @@
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9 1.5V5h4"/></svg>
       <span>Case study</span>
     </span>
-    <h1>Student CRM in Google Apps Script</h1>
-    <p class="lede">The CRM I build and maintain for CAL ACE Nursing Academy, a CDPH-approved CNA school and regional testing center in Milpitas, California.</p>
+    <h1>CAL ACE Student Management System</h1>
+    <p class="lede">A custom student CRM, enrollment website and payment pipeline for a CDPH-approved nurse assistant training program. A student goes from first click to clinical placement without staff re-entering a single field.</p>
 
     <div class="meta">
       <div><span>Client</span><b>CAL ACE Nursing Academy</b></div>
-      <div><span>Since</span><b>June 2025</b></div>
-      <div><span>Built with</span><b>Apps Script</b></div>
+      <div><span>Role</span><b>Product owner / system designer</b></div>
+      <div><span>Stack</span><b>Apps Script · Sheets · Stripe</b></div>
     </div>
 
-    <h2><i>01</i>The school</h2>
-    <p>CAL ACE runs hybrid CNA training, plus HHA, RNA, BLS/CPR and CEU courses. Every course brings a steady stream of registrations, documents, payments and questions from students.</p>
+    <h2><i>01</i>The problem</h2>
+<p>Running a multi-campus nursing school on spreadsheets and paper meant triple data entry: a student registered on one form, the office re-typed them into the roster, and payments lived somewhere else entirely. Requirements like Live Scan, TB tests and CDPH 283B forms were tracked by memory and follow-up calls.</p>
 
-    <h2><i>02</i>What I built</h2>
-    <p>A student CRM in Google Apps Script, on top of the school’s Google Workspace. It automates registration, student records and the communication workflows around them.</p>
-    <div class="flow" aria-label="Flow">
-      <span>Registration</span><em>&rarr;</em>
-      <span>Student record</span><em>&rarr;</em>
-      <span>Requirements</span><em>&rarr;</em>
-      <span>Payment</span><em>&rarr;</em>
-      <span class="on">Enrolled</span>
-    </div>
-
-    <h2><i>03</i>What it covers</h2>
+    <h2><i>02</i>The staff tracker</h2>
+<p>One roster view per program (CNA, RNA, HHA, BLS and CEU), tracking 50+ data points per student: payments, CDPH 283B, Live Scan, TB, physical, onboarding, exams, attendance and evaluations.</p>
+    <figure>
+      <img src="../work/tracker.webp" alt="The CNA roster. Color-coded chips show what each student still owes." loading="lazy">
+      <figcaption>The CNA roster. Color-coded chips show what each student still owes.</figcaption>
+    </figure>
     <ul class="list">
-      <li>Student registration</li>
-      <li>Student records in one place</li>
-      <li>Communication with prospective and enrolled students</li>
-      <li>Enrollment requirements and follow-ups</li>
-      <li>Tuition payments, through the Stripe automation</li>
+      <li>Color-coded chips show each student’s outstanding items at a glance; filters surface anyone missing a requirement across the whole school.</li>
+      <li>One-click personalized reminder emails that list only what that student is missing, with upload links.</li>
+      <li>Welcome letters generated per cohort from templates, bulk actions, payment receipts, and a full activity log of every change.</li>
+      <li>A Class Configuration tab where office staff open or close cohorts, set seat caps and manage clinical sites. The public website updates instantly, no developer needed.</li>
+    </ul>
+    <figure>
+      <img src="../work/student-record.webp" alt="A student record: identity, valid ID, contact details, cohort, and a history of every payment, upload and edit." loading="lazy">
+      <figcaption>A student record: identity, valid ID, contact details, cohort, and a history of every payment, upload and edit.</figcaption>
+    </figure>
+
+    <h2><i>03</i>The enrollment website</h2>
+<p>A branded registration page with a live seat counter per cohort, schedule and clinical site. When a cohort fills, the site moves students to the waitlist automatically.</p>
+    <figure>
+      <img src="../work/registration.webp" alt="The public registration page." loading="lazy">
+      <figcaption>The public registration page.</figcaption>
+    </figure>
+    <ul class="list">
+      <li>A built-in English reading assessment every registrant completes before payment. Low scores are flagged for staff, not used to reject.</li>
+      <li>Stripe payment integration with automatic receipts.</li>
+      <li>A student dashboard where enrollees log in to upload documents (valid photo ID, TB test, physical), check requirements and see their balance.</li>
     </ul>
 
-    <h2><i>04</i>My part</h2>
-    <p>I build and maintain the CRM, and I use it every day: I am also the admin who answers students by call, text and email.</p>
+    <h2><i>04</i>How the two connect</h2>
+    <ul class="list">
+      <li>New registrations flow straight from the website into the tracker.</li>
+      <li>Seat counts on the website are computed live from the actual roster.</li>
+      <li>Requirement rules are cohort-aware: the valid-ID requirement, for example, applies only to cohorts starting on or after its effective date.</li>
+    </ul>
+    <div class="flow" aria-label="Flow">
+      <span>Register online</span><em>&rarr;</em>
+      <span>English assessment</span><em>&rarr;</em>
+      <span>Stripe payment</span><em>&rarr;</em>
+      <span>Tracker record</span><em>&rarr;</em>
+      <span>Documents uploaded</span><em>&rarr;</em>
+      <span class="on">Clinical placement</span>
+    </div>
 
-    <footer>John Paul Corpuz · CRM Developer · jpaul.corpuz@gmail.com</footer>
+    <h2><i>05</i>Results</h2>
+    <div class="stats">
+      <div><b>0</b><span>duplicate data entry between registration, roster and payments</span></div>
+      <div><b>2,200+</b><span>continuing-education registrations managed in the same database</span></div>
+      <div><b>No code</b><span>needed for staff to reconfigure cohorts and seats</span></div>
+      <div><b>No new</b><span>per-seat software licenses: built on the Google Workspace the school already owned</span></div>
+    </div>
+
+    <footer>All screenshots use fictional student data. John Paul Corpuz · jpaul.corpuz@gmail.com</footer>
   </main>
 </body>
 </html>

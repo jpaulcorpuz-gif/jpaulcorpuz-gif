@@ -74,7 +74,7 @@ const CLIENTS: Client[] = [
     name: 'CAL ACE Nursing Academy',
     role: 'School Admin Staff / CRM Developer · Jun 2025 – Present',
     daily:
-      'I build and maintain the student CRM in Google Apps Script and the Stripe automation for tuition, and help students by call, text and email with registration, payments and enrollment requirements.',
+      'I designed and built the school’s student management system (a Google Apps Script CRM, an enrollment website and a Stripe payment pipeline) and help students by call, text and email.',
     work: ['Apps Script', 'Stripe', 'Enrollment'],
     Icon: Code,
   },

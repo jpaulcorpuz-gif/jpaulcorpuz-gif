@@ -92,8 +92,8 @@ export function PlanPanel() {
 type Build = { id: string; label: string; src: string; path: string; Icon: Icon }
 
 const BUILDS: Build[] = [
-  { id: 'ticketing', label: 'Stripe tuition payments', src: '/case-studies/stripe-payments.html', path: '/stripe-payments', Icon: Ticket },
-  { id: 'framework', label: 'Enrollment requirements', src: '/case-studies/enrollment.html', path: '/enrollment', Icon: Robot },
+  { id: 'ticketing', label: 'Enrollment website and Stripe payments', src: '/case-studies/enrollment-site.html', path: '/enrollment-site', Icon: Ticket },
+  { id: 'framework', label: 'Requirement tracking and reminders', src: '/case-studies/requirements.html', path: '/requirements', Icon: Robot },
   { id: 'workflow', label: 'Customer support', src: '/case-studies/support.html', path: '/support', Icon: FlowArrow },
 ]
 

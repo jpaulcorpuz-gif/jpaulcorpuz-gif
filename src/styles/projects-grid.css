@@ -77,6 +77,7 @@
   .pgrid__glass { height: 100%; display: flex; }
   .bento--projects { flex: 1 1 auto; height: 100%; }
   .bento__card--wide { grid-column: span 2; }
+  .bento__card--full { grid-column: 1 / -1; }
 }
 .bento__card--btn {
   font: inherit;
@@ -213,6 +214,7 @@
 .bento__reel--row { display: flex; align-items: center; }
 .bento__reel--row .bento__reel-track { flex-direction: row; width: max-content; animation-name: bento-drift-left; animation-duration: 28s; }
 .bento__shot--app { width: 150px; padding: 4px; }
+.bento__shot--case { width: 260px; }
 .bento__shot--app::before { display: none; }
 .bento__shot--app img { aspect-ratio: 4 / 3; object-position: center; }
 

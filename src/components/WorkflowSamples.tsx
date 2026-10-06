@@ -21,14 +21,15 @@ import { X } from '@/components/slab'
 
 type Sample = { file: string; label: string }
 
+// Rendered from public/case-studies/ by scripts/make-case-thumbs.mjs.
 const SAMPLES: Sample[] = [
-  { file: 'project-1.jpg', label: 'Project Screenshot 1' },
-  { file: 'project-2.jpg', label: 'Project Screenshot 2' },
-  { file: 'project-3.jpg', label: 'Project Screenshot 3' },
-  { file: 'project-4.jpg', label: 'Project Screenshot 4' },
+  { file: 'student-crm.jpeg', label: 'Student CRM case study' },
+  { file: 'stripe-payments.jpeg', label: 'Stripe tuition payments case study' },
+  { file: 'enrollment.jpeg', label: 'Enrollment requirements case study' },
+  { file: 'support.jpeg', label: 'Customer support experience' },
 ]
 
-const srcOf = (s: Sample) => `/placeholders/${encodeURIComponent(s.file)}`
+const srcOf = (s: Sample) => `/case-studies/shots/${encodeURIComponent(s.file)}`
 
 export default function WorkflowSamples() {
   const doubled = useMemo(() => [...SAMPLES, ...SAMPLES], [])
@@ -64,7 +65,7 @@ export default function WorkflowSamples() {
   return (
     <section className="wfs" id="workflow-samples" aria-labelledby="wfs-heading" data-reveal>
       <p className="wfs__caption" id="wfs-heading">
-        PLACEHOLDER - tell me what to put here: one line on what these screenshots show.
+        Short write-ups of my work. Click one to see it full size.
       </p>
 
       <div className="wfs__strip">
@@ -79,7 +80,7 @@ export default function WorkflowSamples() {
                 onClick={(e) => open(s, e.currentTarget)}
                 aria-hidden={clone || undefined}
                 tabIndex={clone ? -1 : undefined}
-                aria-label={clone ? undefined : `Open ${s.label} screenshot`}
+                aria-label={clone ? undefined : `Open ${s.label}`}
               >
                 <span className="wfs__frame-bar" aria-hidden="true">
                   <span className="wfs__dot wfs__dot--r" />

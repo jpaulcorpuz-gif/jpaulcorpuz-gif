@@ -6,7 +6,7 @@
  * render whatever shape they find here, so swapping in content is a data edit
  * and never a JSX edit. Keep the exported names and types stable.
  *
- * Every value below is a PLACEHOLDER. Shape rules:
+ * Shape rules:
  * - The root is you. Its children are the categories (branches).
  * - A branch with `status` is itself a system; a branch without one is a
  *   group whose children are the systems.
@@ -17,20 +17,13 @@
 
 import {
   Sparkle,
-  Coffee,
-  Robot,
-  Article,
-  FilmSlate,
-  UsersThree,
-  Database,
-  SlackLogo,
-  MagnifyingGlass,
+  AddressBook,
+  ClipboardText,
+  IdentificationCard,
+  CreditCard,
+  EnvelopeSimple,
+  ListChecks,
   ChatCircleDots,
-  FlowArrow,
-  PhoneCall,
-  Browser,
-  Broadcast,
-  Timer,
 } from '@/components/slab'
 import type { Icon } from '@/components/slab'
 import { profile } from '@/data/profile'
@@ -56,142 +49,84 @@ export type StackNode = {
   children?: StackNode[]
 }
 
-const ANTHROPIC: StackLogo = { src: '/icons/anthropic.svg', name: 'Anthropic' }
-const OPENAI: StackLogo = { src: '/icons/openai.svg', name: 'OpenAI' }
-const SLACK: StackLogo = { src: '/icons/slack.svg', name: 'Slack' }
-const NOUS: StackLogo = { src: '/icons/nousresearch.svg', name: 'Nous Research' }
-
-const WHAT = 'PLACEHOLDER - tell me what to put here: one plain line on what this does.'
-const STACK = 'PLACEHOLDER - model, tools, where it runs'
+const APPS_SCRIPT: StackLogo = { src: '/icons/googleappsscript.svg', name: 'Google Apps Script' }
+const SHEETS: StackLogo = { src: '/icons/googlesheets.svg', name: 'Google Sheets' }
+const GMAIL: StackLogo = { src: '/icons/gmail.svg', name: 'Gmail' }
+const STRIPE: StackLogo = { src: '/icons/stripe.svg', name: 'Stripe' }
 
 /** Single root: you. Branches are the categories. */
 export const aiStack: StackNode = {
   id: 'root',
   Icon: Sparkle,
   name: profile.name,
-  what: 'PLACEHOLDER - tell me what to put here: one line on the systems you build and run.',
-  stack: 'PLACEHOLDER - your brand',
+  what: 'The CRM and automations I built and run for a California nursing academy.',
+  stack: 'Google Apps Script · Google Workspace · Stripe',
   children: [
     {
-      id: 'project-a',
-      Icon: Coffee,
-      logos: [ANTHROPIC],
-      name: 'Project A',
-      what: WHAT,
-      stack: STACK,
+      id: 'student-crm',
+      Icon: AddressBook,
+      logos: [APPS_SCRIPT, SHEETS],
+      name: 'Student CRM',
+      what: 'Keeps every student’s registration, records and status in one place.',
+      stack: 'Google Apps Script, Google Sheets',
       status: 'Live',
     },
     {
-      id: 'category-one',
-      Icon: Robot,
-      name: 'Category One',
-      what: 'PLACEHOLDER - tell me what to put here: what the systems in this group have in common.',
+      id: 'records',
+      Icon: ClipboardText,
+      name: 'Registration and records',
+      what: 'Getting a student from sign-up to a complete record.',
       children: [
         {
-          id: 'project-b',
-          Icon: Article,
-          logos: [ANTHROPIC],
-          name: 'Project B',
-          what: WHAT,
-          stack: STACK,
-          status: 'Internal',
+          id: 'registration',
+          Icon: ListChecks,
+          logos: [APPS_SCRIPT],
+          name: 'Registration workflow',
+          what: 'Turns a new registration into a student record without retyping.',
+          stack: 'Google Apps Script, Google Sheets',
+          status: 'Live',
         },
         {
-          id: 'project-c',
-          Icon: FilmSlate,
-          logos: [OPENAI],
-          name: 'Project C',
-          what: WHAT,
-          stack: STACK,
-          status: 'Internal',
-        },
-        {
-          id: 'project-d',
-          Icon: UsersThree,
-          logos: [ANTHROPIC],
-          name: 'Project D',
-          what: WHAT,
-          stack: STACK,
+          id: 'requirements',
+          Icon: IdentificationCard,
+          logos: [APPS_SCRIPT],
+          name: 'Enrollment requirements',
+          what: 'Tracks each student’s ID, TB test and physical exam, and what is still missing.',
+          stack: 'Google Apps Script, Google Sheets',
           status: 'Internal',
         },
       ],
     },
     {
-      id: 'category-two',
-      Icon: Database,
-      name: 'Category Two',
-      what: 'PLACEHOLDER - tell me what to put here: what the systems in this group have in common.',
+      id: 'payments',
+      Icon: CreditCard,
+      name: 'Payments',
+      what: 'Tuition collected without chasing.',
       children: [
         {
-          id: 'project-e',
-          Icon: SlackLogo,
-          logos: [ANTHROPIC, SLACK],
-          name: 'Project E',
-          what: WHAT,
-          stack: STACK,
-          status: 'Live',
-        },
-        {
-          id: 'project-f',
-          Icon: MagnifyingGlass,
-          logos: [ANTHROPIC],
-          name: 'Project F',
-          what: WHAT,
-          stack: STACK,
+          id: 'stripe-tuition',
+          Icon: CreditCard,
+          logos: [STRIPE, APPS_SCRIPT],
+          name: 'Stripe tuition payments',
+          what: 'Collects registration fees and installment plans through Stripe.',
+          stack: 'Stripe, Google Apps Script',
           status: 'Live',
         },
       ],
     },
     {
-      id: 'category-three',
+      id: 'comms',
       Icon: ChatCircleDots,
-      name: 'Category Three',
-      what: 'PLACEHOLDER - tell me what to put here: what the systems in this group have in common.',
+      name: 'Communication',
+      what: 'Students hear from the school at the right step.',
       children: [
         {
-          id: 'project-g',
-          Icon: FlowArrow,
-          logos: [ANTHROPIC],
-          name: 'Project G',
-          what: WHAT,
-          stack: STACK,
-          status: 'Live',
-        },
-        {
-          id: 'project-h',
-          Icon: PhoneCall,
-          logos: [ANTHROPIC],
-          name: 'Project H',
-          what: WHAT,
-          stack: STACK,
-          status: 'Beta',
-        },
-        {
-          id: 'project-i',
-          Icon: Browser,
-          logos: [ANTHROPIC],
-          name: 'Project I',
-          what: WHAT,
-          stack: STACK,
-          status: 'Live',
-        },
-      ],
-    },
-    {
-      id: 'project-j',
-      Icon: Broadcast,
-      logos: [NOUS],
-      name: 'Project J',
-      what: WHAT,
-      stack: STACK,
-      status: 'Live',
-      children: [
-        {
-          id: 'project-k',
-          Icon: Timer,
-          name: 'Project K',
-          what: WHAT,
-          stack: STACK,
+          id: 'student-comms',
+          Icon: EnvelopeSimple,
+          logos: [APPS_SCRIPT, GMAIL],
+          name: 'Student communication',
+          what: 'Sends students the emails they need as they move through enrollment.',
+          stack: 'Google Apps Script, Gmail',
           status: 'Live',
         },
       ],

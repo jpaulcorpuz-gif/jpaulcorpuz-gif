@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { profile } from '@/data/profile'
 
 /**
- * Terms of Service - PLACEHOLDER. Legal text has to fit YOUR business, so
- * none is supplied. Paste your own terms into the sections below.
+ * Terms of Service. Plain-language terms for a personal portfolio.
  */
 export default function ToS() {
   const navigate = useNavigate()
@@ -22,20 +21,20 @@ export default function ToS() {
         </button>
 
         <h1 className="legal-page__title">Terms of Service</h1>
-        <p className="legal-page__updated">Last updated: PLACEHOLDER date</p>
+        <p className="legal-page__updated">Last updated: October 6, 2026</p>
 
         <div className="legal-page__body">
           <h2>Using this site</h2>
-          <p>PLACEHOLDER - tell me what to put here: the basic terms for visiting this site.</p>
+          <p>This site is a personal portfolio. You are welcome to browse it and contact me through it. It is provided as is, for information only.</p>
 
           <h2>Work and payment</h2>
-          <p>PLACEHOLDER - tell me what to put here: how projects are scoped, billed and delivered.</p>
+          <p>Nothing on this site is an offer or a contract. Any work, its scope, price and timeline are agreed with me in writing before it starts.</p>
 
           <h2>Ownership</h2>
-          <p>PLACEHOLDER - tell me what to put here: who owns the work and the content on this site.</p>
+          <p>The text on this site is mine. Company names and tool logos belong to their owners and are shown only to describe where I have worked and what I work with. Case studies describe my own work and contain no client data.</p>
 
           <h2>Liability</h2>
-          <p>PLACEHOLDER - tell me what to put here: your limits of liability.</p>
+          <p>I am not liable for any loss that comes from using this site or relying on its content.</p>
 
           <h2>Contact</h2>
           <p>

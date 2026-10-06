@@ -9,22 +9,22 @@ export type QA = { q: string; a: string }
 export const FAQS: QA[] = [
   {
     q: 'What do you do?',
-    a: 'PLACEHOLDER - tell me what to put here: the kinds of work you take on, and who it is usually for.',
+    a: 'I build CRMs and workflow automations in Google Apps Script, set up Stripe payments, and handle the admin and customer support around them. Right now I do this for a nursing academy in California.',
   },
   {
-    q: 'How fast can you start?',
-    a: 'PLACEHOLDER - tell me what to put here: your usual lead time for small fixes vs. larger projects, and your working hours.',
+    q: 'What tools do you use?',
+    a: 'Google Apps Script and Google Workspace for CRMs and automation, Stripe for payments, and Zendesk, Salesforce, Nextiva, Slack and Microsoft Teams for support. I also work in Kajabi, Meta Business Suite and Google Search Console.',
   },
   {
-    q: 'How much do you charge?',
-    a: 'PLACEHOLDER - tell me what to put here: how you price (hourly, per project, retainer) and how a quote is put together.',
+    q: 'Do you work remotely?',
+    a: 'Yes. I have worked remotely for a school in California since June 2025.',
   },
   {
     q: 'Where are you based?',
-    a: 'PLACEHOLDER - tell me what to put here: your location or timezone, and which client timezones you overlap with.',
+    a: 'Caloocan City, Philippines (GMT+8).',
   },
   {
     q: 'What happens after I write?',
-    a: 'PLACEHOLDER - tell me what to put here: how fast you reply and what the next step looks like.',
+    a: 'I reply by email. Tell me what you need built or handled and I will tell you how I would do it.',
   },
 ]

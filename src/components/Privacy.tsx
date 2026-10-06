@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { profile } from '@/data/profile'
 
 /**
- * Privacy Policy - PLACEHOLDER. Legal text has to describe YOUR site and what
- * it collects, so none is supplied. Write it (or have a lawyer or a policy
- * generator write it) and paste it into the sections below.
+ * Privacy Policy. Plain-language, and true of the site as built: no
+ * analytics, no cookies, and a contact form that only opens the visitor's
+ * own email app. Update it if you add a form backend or analytics.
  */
 export default function Privacy() {
   const navigate = useNavigate()
@@ -23,20 +23,20 @@ export default function Privacy() {
         </button>
 
         <h1 className="legal-page__title">Privacy Policy</h1>
-        <p className="legal-page__updated">Last updated: PLACEHOLDER date</p>
+        <p className="legal-page__updated">Last updated: October 6, 2026</p>
 
         <div className="legal-page__body">
           <h2>Who this covers</h2>
-          <p>PLACEHOLDER - tell me what to put here: who runs this site and which sites this policy applies to.</p>
+          <p>This is the personal portfolio of {profile.name}. This policy covers this site only.</p>
 
           <h2>What is collected</h2>
-          <p>PLACEHOLDER - tell me what to put here: what the contact form and any analytics collect.</p>
+          <p>This site has no analytics and sets no cookies. The contact form does not send anything to a server: it opens your own email app with your message filled in, and nothing is sent unless you press send there. Your theme and accessibility choices are saved in your browser only.</p>
 
           <h2>How it is used</h2>
-          <p>PLACEHOLDER - tell me what to put here: what you do with that data and who else sees it.</p>
+          <p>If you email me, I use your message and email address only to reply to you. I do not sell or share them.</p>
 
           <h2>How long it is kept</h2>
-          <p>PLACEHOLDER - tell me what to put here: retention periods and how to ask for deletion.</p>
+          <p>Emails stay in my inbox until I delete them. To have yours deleted, email me and I will remove it.</p>
 
           <h2>Contact</h2>
           <p>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Play, Gauge, Robot, Code } from '@/components/slab'
+import { Play, Gauge, Headset, Code } from '@/components/slab'
 import type { Icon } from '@/components/slab'
 
 /**
@@ -39,7 +39,7 @@ const CLIPS: Clip[] = [
     src: '',
     poster: '/placeholders/testimonial-1.jpg',
     duration: '0:00',
-    kicker: 'Client testimonial',
+    kicker: 'Video',
     width: 720,
     height: 1080,
   },
@@ -49,7 +49,7 @@ const CLIPS: Clip[] = [
     src: '',
     poster: '/placeholders/testimonial-2.jpg',
     duration: '0:00',
-    kicker: 'Client testimonial',
+    kicker: 'Video',
     width: 720,
     height: 1080,
   },
@@ -71,33 +71,30 @@ type Client = {
 const CLIENTS: Client[] = [
   {
     index: '01',
-    name: 'Client Name 1',
-    role: 'PLACEHOLDER ROLE',
+    name: 'CAL ACE Nursing Academy',
+    role: 'School Admin Staff / CRM Developer · Jun 2025 – Present',
     daily:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on what you run or build for this client day to day.',
-    work: ['Tag', 'Tag', 'Tag'],
-    logoSrc: '/placeholders/logo.svg',
-    Icon: Gauge,
+      'I build and maintain the student CRM in Google Apps Script and the Stripe automation for tuition, and help students by call, text and email with registration, payments and enrollment requirements.',
+    work: ['Apps Script', 'Stripe', 'Enrollment'],
+    Icon: Code,
   },
   {
     index: '02',
-    name: 'Client Name 2',
-    role: 'PLACEHOLDER ROLE',
+    name: 'Eclaro',
+    role: 'Customer Support Representative · Jan 2024 – Sep 2026',
     daily:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on what you run or build for this client day to day.',
-    work: ['Tag', 'Tag', 'Tag'],
-    logoSrc: '/placeholders/logo.svg',
-    Icon: Robot,
+      'Supported account executives in resolving service tickets within contractual SLAs, kept pricing data and vendor price lists current, and documented customer communications in Zendesk.',
+    work: ['Zendesk', 'SLAs', 'Reporting'],
+    Icon: Gauge,
   },
   {
     index: '03',
-    name: 'Client Name 3',
-    role: 'PLACEHOLDER ROLE',
+    name: 'Alorica Teleservices',
+    role: 'Customer Service Representative · Jan 2023 – Jan 2024',
     daily:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on what you run or build for this client day to day.',
-    work: ['Tag', 'Tag', 'Tag'],
-    logoSrc: '/placeholders/logo.svg',
-    Icon: Code,
+      'Supported telco customers by phone, chat and email with technical issues, billing concerns and account updates, and helped the team resolve escalations.',
+    work: ['Tech support', 'Billing', 'Upselling'],
+    Icon: Headset,
   },
 ]
 
@@ -110,6 +107,8 @@ export default function TestimonialsGrid() {
   const [playing, setPlaying] = useState(false)
   const clip = CLIPS[active]
   const hasVideo = clip.src !== ''
+  // The video column only shows once at least one clip has a file.
+  const showReel = CLIPS.some((c) => c.src !== '')
   const pick = (i: number) => {
     setActive(i)
     setPlaying(false)
@@ -118,17 +117,18 @@ export default function TestimonialsGrid() {
   return (
     <section className="pgrid tgrid" aria-labelledby="testimonials-title">
       <header className="pgrid__head">
-        <span className="pgrid__eyebrow">Testimonials</span>
+        <span className="pgrid__eyebrow">Experience</span>
         <h1 className="pgrid__title" id="testimonials-title">
-          Your testimonials headline.
+          10+ years helping people, now building the systems too.
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one line that introduces the videos and the client list.
+          Nearly four years in BPO support, then CRM development and admin for a California nursing academy.
         </p>
       </header>
 
-      <div className="home__glass tgrid__glass">
+      <div className={`home__glass tgrid__glass${showReel ? '' : ' tgrid__glass--solo'}`}>
         {/* Left: one stage, two clips. */}
+        {showReel && (
         <div className="tgrid__reel">
           <div className="tgrid__stage">
             {playing && hasVideo ? (
@@ -178,7 +178,7 @@ export default function TestimonialsGrid() {
                   <span className="tgrid__cover-sub">
                     {hasVideo
                       ? `${clip.duration} · Tap to play`
-                      : 'PLACEHOLDER - add your video to public/testimonials/'}
+                      : 'Video coming soon'}
                   </span>
                 </span>
               </button>
@@ -207,12 +207,13 @@ export default function TestimonialsGrid() {
             ))}
           </div>
         </div>
+        )}
 
         {/* Right: the client ledger, one row per client. */}
         <div className="tgrid__ledger">
           <div className="tgrid__ledger-head">
-            <h2 className="tgrid__ledger-title">Your client list headline here.</h2>
-            <p className="tgrid__ledger-sub">Short supporting line.</p>
+            <h2 className="tgrid__ledger-title">Where I have worked.</h2>
+            <p className="tgrid__ledger-sub">Plus customer-facing roles outside BPO, 2013 – 2020.</p>
           </div>
 
           {/* One plate, three rows split by hairlines. Three boxed cards each

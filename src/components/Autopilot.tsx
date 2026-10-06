@@ -4,17 +4,16 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 import {
   Lightning,
   EnvelopeSimple,
-  CalendarCheck,
   Clock,
   BellRinging,
-  VideoCamera,
   FileText,
   Trophy,
   XCircle,
   Hourglass,
-  Heart,
-  Plug,
-  Sparkle,
+  AddressBook,
+  ClipboardText,
+  CreditCard,
+  Code,
 } from '@/components/slab'
 import type { Icon } from '@/components/slab'
 
@@ -50,19 +49,17 @@ type FlowNode = {
 // x,y = top-left of the node box on the 1000x372 canvas (mirrors the flowchart).
 // Two tiers: the chain across the top, the outcomes fanning out just below.
 const NODES: FlowNode[] = [
-  // top chain
-  { id: 'n-form',     Icon: Lightning,     title: 'Trigger',        subtitle: 'Form submitted',    x: 6,   y: 36,  variant: 'trigger' },
-  { id: 'n-email',    Icon: EnvelopeSimple, title: 'Send Email',    subtitle: 'Action',            x: 176, y: 36 },
-  { id: 'n-booked',   Icon: CalendarCheck, title: 'Update CRM',     subtitle: 'Action',            x: 346, y: 36 },
-  { id: 'n-24hr',     Icon: Clock,         title: 'Wait',           subtitle: 'Delay step',        x: 516, y: 36 },
-  { id: 'n-1hr',      Icon: BellRinging,   title: 'Reminder',       subtitle: 'Email & SMS',       x: 686, y: 36 },
-  { id: 'n-call',     Icon: VideoCamera,   title: 'Decision',       subtitle: 'Condition gate',    x: 866, y: 36, variant: 'gate' },
-  // outcomes (one tier, fanning out of the decision gate)
-  { id: 'n-proposal', Icon: FileText,      title: 'Outcome A',      subtitle: 'Next action',       x: 56,  y: 268 },
-  { id: 'n-won',      Icon: Trophy,        title: 'Won',            subtitle: 'Goal reached',      x: 240, y: 268, variant: 'win' },
-  { id: 'n-maybe',    Icon: Hourglass,     title: 'Outcome B',      subtitle: 'Not ready yet',     x: 468, y: 268 },
-  { id: 'n-nurture',  Icon: Heart,         title: 'AI Step',        subtitle: 'Follow-up drip',    x: 652, y: 268 },
-  { id: 'n-lost',     Icon: XCircle,       title: 'Lost',           subtitle: 'Closed out',        x: 866, y: 268, variant: 'lost' },
+  { id: 'n-form',     Icon: Lightning,     title: 'Trigger',          subtitle: 'Registration in',   x: 6,   y: 36,  variant: 'trigger' },
+  { id: 'n-email',    Icon: EnvelopeSimple, title: 'Welcome Email',   subtitle: 'Gmail',             x: 176, y: 36 },
+  { id: 'n-booked',   Icon: AddressBook,   title: 'Update CRM',       subtitle: 'Student record',    x: 346, y: 36 },
+  { id: 'n-24hr',     Icon: ClipboardText, title: 'Check Docs',       subtitle: 'ID, TB, physical',  x: 516, y: 36 },
+  { id: 'n-1hr',      Icon: BellRinging,   title: 'Reminder',         subtitle: 'Missing items',     x: 686, y: 36 },
+  { id: 'n-call',     Icon: CreditCard,    title: 'Payment',          subtitle: 'Condition gate',    x: 866, y: 36, variant: 'gate' },
+  { id: 'n-proposal', Icon: FileText,      title: 'Paid in Full',     subtitle: 'Stripe checkout',   x: 56,  y: 268 },
+  { id: 'n-won',      Icon: Trophy,        title: 'Enrolled',         subtitle: 'Goal reached',      x: 240, y: 268, variant: 'win' },
+  { id: 'n-maybe',    Icon: Hourglass,     title: 'Installments',     subtitle: 'Stripe plan',       x: 468, y: 268 },
+  { id: 'n-nurture',  Icon: Clock,         title: 'Due Reminder',     subtitle: 'Before each charge', x: 652, y: 268 },
+  { id: 'n-lost',     Icon: XCircle,       title: 'Withdrawn',        subtitle: 'Closed out',        x: 866, y: 268, variant: 'lost' },
 ]
 
 type LinkKind = 'solid' | 'dash' | 'loop'
@@ -87,9 +84,9 @@ const LINKS: Link[] = [
 ]
 
 export const TOOLS: { Icon: Icon; label: string }[] = [
-  { Icon: Plug,           label: 'Your CRM' },
-  { Icon: EnvelopeSimple, label: 'Email & SMS' },
-  { Icon: Sparkle,        label: 'AI Assistant' },
+  { Icon: Code,           label: 'Apps Script CRM' },
+  { Icon: EnvelopeSimple, label: 'Gmail' },
+  { Icon: CreditCard,     label: 'Stripe' },
 ]
 
 const SVGNS = 'http://www.w3.org/2000/svg'
@@ -348,11 +345,13 @@ export default function Autopilot({ compact = false, maxScale = 1 }: AutopilotPr
       <header className="autopilot__head">
         <span className="autopilot__eyebrow">Live automation</span>
         <h2 id="autopilot-heading" className="autopilot__headline">
-          Your workflow, end to end.
+          Enrollment, end to end.
         </h2>
         <p className="autopilot__intro">
-          PLACEHOLDER - tell me what to put here: two or three sentences walking
-          through this example automation, from the trigger to each outcome.
+          A registration comes in, the student gets a welcome email and a CRM
+          record, and the system checks their documents and reminds them about
+          anything missing. Then payment decides the path: paid in full, an
+          installment plan with reminders before each charge, or withdrawn.
         </p>
       </header>
       )}
@@ -369,7 +368,7 @@ export default function Autopilot({ compact = false, maxScale = 1 }: AutopilotPr
 
         <div className="autopilot__canvas">
           <p className="autopilot__caption">
-            Your flow caption, in one short line.
+            Registration to enrolled, one student at a time.
           </p>
 
           <div className="autopilot__board" aria-hidden="true">

@@ -2,9 +2,7 @@
  * YOUR IDENTITY - start here.
  *
  * Everything that says who you are lives in this file: name, handle, photo,
- * socials, email and the Home headline. Every value below is a PLACEHOLDER.
- * Replace the text, or hand this file to your AI assistant and tell it what
- * to put in each field.
+ * socials, email and the Home headline.
  *
  * Page-specific copy (projects, services, testimonials, FAQs) lives in the
  * other files in src/data/ and at the top of each view component.
@@ -46,31 +44,31 @@ export type Profile = {
 }
 
 export const profile: Profile = {
-  name: 'Your Name',
-  firstName: 'Your Name',
-  handle: '@yourhandle',
-  role: 'PLACEHOLDER - your title',
+  name: 'John Paul Corpuz',
+  firstName: 'John Paul',
+  handle: '@jpaulcorpuz',
+  role: 'CRM Developer · Workflow Automation',
   avatarSrc: '/avatar.svg',
-  verifiedLabel: 'PLACEHOLDER - what the tick means (e.g. a certification)',
-  email: 'you@example.com',
-  location: 'PLACEHOLDER - your city or timezone',
+  verifiedLabel: 'BS Information Technology, AMA Computer College',
+  email: 'jpaul.corpuz@gmail.com',
+  location: 'Caloocan City, Philippines',
   // Pick any icon from https://phosphoricons.com and import it above.
   stats: [
-    { value: '0 yrs', label: 'PLACEHOLDER', Icon: Briefcase },
-    { value: '#000', label: 'PLACEHOLDER', Icon: SealCheck },
-    { value: 'GMT+0', label: 'PLACEHOLDER', Icon: Clock },
+    { value: '10+ yrs', label: 'Customer-facing', Icon: Briefcase },
+    { value: 'Stripe', label: 'Payment automation', Icon: SealCheck },
+    { value: 'GMT+8', label: 'Remote, US team', Icon: Clock },
   ],
   // The intro types this line, then flies it into the Home headline.
   // Keep it short: two halves, 5-8 words total.
-  displayName: { line1: 'Your headline here.', line2: 'Keep it short.' },
+  displayName: { line1: 'CRMs, automation,', line2: 'and real support.' },
   hero: {
-    body: 'PLACEHOLDER - one line on what you do and who you do it for.',
+    body: 'I build Google Apps Script CRMs and Stripe automations, and handle the admin and customer support around them.',
     portraitSrc: '/avatar.svg',
-    portraitAlt: 'Portrait placeholder',
+    portraitAlt: 'Portrait of John Paul Corpuz',
   },
+  // PLACEHOLDER - paste your real profile links. A '#' link goes nowhere.
   socials: [
     { label: 'Facebook profile', href: '#', iconPath: '/icons/facebook.svg' },
     { label: 'LinkedIn profile', href: '#', iconPath: '/icons/linkedin.svg' },
-    { label: 'Discord profile', href: '#', iconPath: '/icons/discord.svg' },
   ],
 }

@@ -61,7 +61,7 @@ export function BarrelPanel() {
 /** The systems as a logo-first grid, in a scrolling window. */
 export function AIWindow() {
   return (
-    <SectionWindow label="Your systems">
+    <SectionWindow label="Automations">
       <AIStackGrid />
     </SectionWindow>
   )
@@ -79,10 +79,10 @@ export function PlanPanel() {
   return (
     <div className="ppanel ppanel--frame">
       <FrameBar
-        host="yourdomain.com"
-        path="/sample-plan"
+        host="Case study"
+        path="/student-crm"
       />
-      <LiveFrame src="/placeholders/sample-plan.html" title="Sample document" />
+      <LiveFrame src="/case-studies/student-crm.html" title="Student CRM case study" />
     </div>
   )
 }
@@ -92,16 +92,16 @@ export function PlanPanel() {
 type Build = { id: string; label: string; src: string; path: string; Icon: Icon }
 
 const BUILDS: Build[] = [
-  { id: 'ticketing', label: 'Featured Project One', src: '/placeholders/sample-plan.html?doc=1', path: '/featured-one', Icon: Ticket },
-  { id: 'framework', label: 'Featured Project Two', src: '/placeholders/sample-plan.html?doc=2', path: '/featured-two', Icon: Robot },
-  { id: 'workflow', label: 'Featured Project Three', src: '/placeholders/sample-plan.html?doc=3', path: '/featured-three', Icon: FlowArrow },
+  { id: 'ticketing', label: 'Stripe tuition payments', src: '/case-studies/stripe-payments.html', path: '/stripe-payments', Icon: Ticket },
+  { id: 'framework', label: 'Enrollment requirements', src: '/case-studies/enrollment.html', path: '/enrollment', Icon: Robot },
+  { id: 'workflow', label: 'Customer support', src: '/case-studies/support.html', path: '/support', Icon: FlowArrow },
 ]
 
 /** One build, framed, open on arrival. */
 function BuildPanel({ build }: { build: Build }) {
   return (
     <div className="ppanel ppanel--frame">
-      <FrameBar host="yourdomain.com" path={build.path} />
+      <FrameBar host="Case study" path={build.path} />
       <LiveFrame src={build.src} title={build.label} />
     </div>
   )

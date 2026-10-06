@@ -4,7 +4,7 @@ import { useMemo } from 'react'
  * ToolsMarquee
  *
  * Horizontally scrolling strip of brand logos + labels for the tools you work with.
- * PLACEHOLDER - swap the list below for your own tools (icons live in public/icons/).
+ * The tools I work with (icons live in public/icons/).
  * The strip lives on the cream shader page, NOT inside a dark section.
  *
  * Implementation notes:
@@ -38,17 +38,16 @@ type Tool = {
 }
 
 export const tools: Tool[] = [
-  { name: 'Claude Code',          iconPath: '/icons/claude-code-logo.png' },
-  { name: 'Codex',                iconPath: '/icons/codex.svg',           color: '#000000' },
-  { name: 'Cursor',               iconPath: '/icons/cursor.svg',          color: '#0F172A' },
-  { name: 'Hermes AI',            iconPath: '/icons/nousresearch.svg',    color: '#18181B' },
-  { name: 'VS Code',              iconPath: '/icons/vscode.svg' },
-  { name: 'GoHighLevel',          iconPath: '/icons/gohighlevel.png' },
-  { name: 'Lightspeed X-Series',  iconPath: '/icons/lightspeed.png' },
+  { name: 'Google Apps Script',   iconPath: '/icons/googleappsscript.svg', color: '#4285F4' },
   { name: 'Google Workspace',     iconPath: '/icons/googleworkspace.svg' },
+  { name: 'Google Sheets',        iconPath: '/icons/googlesheets.svg',    color: '#34A853' },
+  { name: 'Gmail',                iconPath: '/icons/gmail.svg',           color: '#EA4335' },
+  { name: 'Stripe',               iconPath: '/icons/stripe.svg',          color: '#635BFF' },
   { name: 'Zendesk',              iconPath: '/icons/zendesk.svg',         color: '#03363D' },
-  { name: 'Intercom',             iconPath: '/icons/intercom.svg',        color: '#1F8DED' },
   { name: 'Slack',                iconPath: '/icons/slack.svg',           color: '#611F69' },
+  { name: 'Meta Business Suite',  iconPath: '/icons/meta.svg',            color: '#0467DF' },
+  { name: 'Google Search Console', iconPath: '/icons/googlesearchconsole.svg', color: '#458CF5' },
+  { name: 'VS Code',              iconPath: '/icons/vscode.svg' },
 ]
 
 export default function ToolsMarquee() {

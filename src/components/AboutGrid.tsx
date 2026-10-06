@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import { ArrowUpRight, MapPin } from '@/components/slab'
+import { ArrowUpRight, MapPin, GraduationCap, EnvelopeSimple } from '@/components/slab'
 import { profile } from '@/data/profile'
 
 /**
@@ -14,20 +14,15 @@ import { profile } from '@/data/profile'
  * visual. Swap the marks below for your own (any square SVG/PNG in public/).
  */
 
-const N8N = { src: '/icons/ai/n8n.svg', name: 'n8n' }
-const ZAPIER = { src: '/icons/ai/zapier.svg', name: 'Zapier' }
-const DOCKER = { src: '/icons/ai/docker.svg', name: 'Docker' }
-const CLAUDE = { src: '/icons/ai/claude-color.svg', name: 'Claude' }
-const CODEX = { src: '/icons/ai/codex.svg', name: 'Codex' }
-const GLM = { src: '/icons/ai/zhipu.svg', name: 'GLM' }
-const QWEN = { src: '/icons/ai/qwen.svg', name: 'Qwen' }
-const HERMES = { src: '/icons/ai/hermes.svg', name: 'Hermes' }
-const NAMECHEAP = { src: '/icons/ai/namecheap.svg', name: 'Namecheap' }
-const CLOUDFLARE = { src: '/icons/ai/cloudflare.svg', name: 'Cloudflare' }
-const GITHUB = { src: '/icons/ai/github.svg', name: 'GitHub' }
+const APPS_SCRIPT = { src: '/icons/brand/googleappsscript.svg', name: 'Google Apps Script' }
 const GWS = { src: '/icons/googleworkspace.svg', name: 'Google Workspace' }
+const SHEETS = { src: '/icons/brand/googlesheets.svg', name: 'Google Sheets' }
+const STRIPE = { src: '/icons/brand/stripe.svg', name: 'Stripe' }
+const GMAIL = { src: '/icons/brand/gmail.svg', name: 'Gmail' }
+const FORMS = { src: '/icons/brand/googleforms.svg', name: 'Google Forms' }
+const DRIVE = { src: '/icons/brand/googledrive.svg', name: 'Google Drive' }
+const ZENDESK = { src: '/icons/brand/zendesk.svg', name: 'Zendesk' }
 const SLACK = { src: '/icons/ai/slack-color.svg', name: 'Slack' }
-const FIREFLIES = { src: '/icons/ai/fireflies.png', name: 'Fireflies' }
 
 type Capability = {
   index: string
@@ -38,23 +33,23 @@ type Capability = {
 const CAPABILITIES: Capability[] = [
   {
     index: '01',
-    title: 'Your role 1',
-    marks: [N8N, ZAPIER, DOCKER],
+    title: 'CRM development',
+    marks: [APPS_SCRIPT, SHEETS, GWS],
   },
   {
     index: '02',
-    title: 'Your role 2',
-    marks: [CLAUDE, CODEX, GLM, QWEN, HERMES],
+    title: 'Payment automation',
+    marks: [STRIPE, APPS_SCRIPT],
   },
   {
     index: '03',
-    title: 'Your role 3',
-    marks: [CLAUDE, CODEX, NAMECHEAP, CLOUDFLARE, GITHUB],
+    title: 'Admin and enrollment',
+    marks: [FORMS, DRIVE, GMAIL],
   },
   {
     index: '04',
-    title: 'Your role 4',
-    marks: [GWS, SLACK, FIREFLIES],
+    title: 'Customer support',
+    marks: [ZENDESK, SLACK, GMAIL],
   },
 ]
 
@@ -67,24 +62,22 @@ export default function AboutGrid() {
           {`Hi, I’m ${profile.firstName}.`}
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one line on what you do.
+          Remote CRM developer and admin staff for a California nursing academy.
         </p>
       </header>
 
       <div className="home__glass agrid__glass">
         <div className="agrid__copy">
           <p className="agrid__lead">
-            Your big statement goes here, in one or two lines.
-            <span> A softer second half that finishes the thought.</span>
+            I build the systems that keep a school running.
+            <span> Then I answer the students who use them.</span>
           </p>
 
           <p className="agrid__note">
-            <strong>Your company name</strong>, and{' '}
-            <a className="agrid__link" href="#">
-              your product
-            </a>{' '}
-            - PLACEHOLDER - tell me what to put here: two sentences on your company, what
-            you sell or build, and who it is for.
+            <strong>CAL ACE Nursing Academy</strong>, a CDPH-approved CNA school in Milpitas,
+            California, is where I build and run the student CRM in Google Apps Script and the
+            Stripe automation for tuition. Before that: nearly four years in BPO support at
+            Eclaro and Alorica, and 10+ years in customer-facing roles overall.
           </p>
 
           <ul className="agrid__caps" role="list">
@@ -112,12 +105,12 @@ export default function AboutGrid() {
           {/* One plate, two cells sharing a mark / title / meta anatomy. */}
           <div className="agrid__bar">
             <span className="agrid__cell">
-              <span className="agrid__cell-mark agrid__cell-mark--img">
-                <img src="/placeholders/badge.svg" alt="" loading="lazy" decoding="async" />
+              <span className="agrid__cell-mark">
+                <GraduationCap size={16} weight="fill" aria-hidden="true" />
               </span>
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">Credential name</span>
-                <span className="agrid__cell-meta">Credential ID</span>
+                <span className="agrid__cell-title">BS Information Technology</span>
+                <span className="agrid__cell-meta">AMA Computer College</span>
               </span>
             </span>
 
@@ -127,17 +120,17 @@ export default function AboutGrid() {
               </span>
               <span className="agrid__cell-copy">
                 <span className="agrid__cell-title">{profile.location}</span>
-                <span className="agrid__cell-meta">Timezone · working hours</span>
+                <span className="agrid__cell-meta">GMT+8 · works remotely</span>
               </span>
             </span>
 
-            <a className="agrid__cell agrid__cell--wide" href="#">
-              <span className="agrid__cell-mark agrid__cell-mark--plain">
-                <img src="/placeholders/logo.svg" alt="" loading="lazy" decoding="async" />
+            <a className="agrid__cell agrid__cell--wide" href={`mailto:${profile.email}`}>
+              <span className="agrid__cell-mark">
+                <EnvelopeSimple size={16} weight="fill" aria-hidden="true" />
               </span>
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">Community or affiliation</span>
-                <span className="agrid__cell-meta">Your role there</span>
+                <span className="agrid__cell-title">{profile.email}</span>
+                <span className="agrid__cell-meta">Email me</span>
               </span>
               <ArrowUpRight className="agrid__cell-go" size={15} weight="bold" aria-hidden="true" />
             </a>
@@ -147,7 +140,7 @@ export default function AboutGrid() {
         <div className="agrid__portrait">
           <img
             src="/avatar.svg"
-            alt="Portrait placeholder"
+            alt="Portrait of John Paul Corpuz"
             loading="eager"
             decoding="async"
             width={400}

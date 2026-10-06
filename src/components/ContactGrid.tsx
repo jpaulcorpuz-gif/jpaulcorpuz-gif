@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { PaperPlaneTilt, CheckCircle, WarningCircle, EnvelopeSimple, ArrowUpRight, CaretDown } from '@/components/slab'
 import { FAQS } from '@/data/faqs'
 import { profile } from '@/data/profile'
-import { readLead, submitLead, SubmitError, MAX_NAME, MAX_EMAIL, MAX_MESSAGE, type SubmitResult } from '@/lib/contact'
+import { ENDPOINT, readLead, submitLead, SubmitError, MAX_NAME, MAX_EMAIL, MAX_MESSAGE, type SubmitResult } from '@/lib/contact'
 
 /**
  * ContactGrid - the Contact view as a fixed viewport.
@@ -60,10 +60,10 @@ export default function ContactGrid() {
       <header className="pgrid__head">
         <span className="pgrid__eyebrow">FAQs / Contact</span>
         <h1 className="pgrid__title" id="contact-title">
-          Your contact headline goes here.
+          Need a CRM, an automation or a hand with support?
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one or two lines inviting people to write and saying what they get back.
+          Write to me with what you need, and I will reply by email with how I would handle it.
         </p>
       </header>
 
@@ -132,8 +132,8 @@ export default function ContactGrid() {
               </h2>
               <p className="cgrid__done-body">
                 {status.via === 'webhook'
-                  ? 'It is in my inbox and on my phone. You will hear back within one business day.'
-                  : 'The message is laid out and addressed. Press send there and you will hear back within one business day.'}
+                  ? 'It is in my inbox and on my phone. I will get back to you by email.'
+                  : 'The message is laid out and addressed. Press send there and I will get back to you by email.'}
               </p>
               <button type="button" className="cgrid__again" onClick={() => setStatus({ kind: 'idle' })}>
                 Write another
@@ -165,7 +165,7 @@ export default function ContactGrid() {
 
               <label className="cgrid__field">
                 <span className="cgrid__label">Email</span>
-                <input type="email" name="email" autoComplete="email" required maxLength={MAX_EMAIL} placeholder="you@yourbusiness.com" />
+                <input type="email" name="email" autoComplete="email" required maxLength={MAX_EMAIL} placeholder="you@example.com" />
               </label>
 
               <label className="cgrid__field cgrid__field--grow">
@@ -197,7 +197,9 @@ export default function ContactGrid() {
                     {status.note}
                   </span>
                 ) : (
-                  <span className="cgrid__hint">Short reassurance line, e.g. your reply time.</span>
+                  <span className="cgrid__hint">
+                    {ENDPOINT ? 'Goes straight to my inbox.' : 'Opens your email app with the message ready to send.'}
+                  </span>
                 )}
               </div>
             </form>

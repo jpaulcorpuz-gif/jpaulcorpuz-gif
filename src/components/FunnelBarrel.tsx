@@ -24,7 +24,7 @@ type Props = {
 
 function thumbSrc(f: Funnel) {
   const dir = f.dir ?? 'funnels'
-  return `/${dir}/thumbs/${f.file.replace('.html', '.jpeg')}`
+  return `${dir}/thumbs/${f.file.replace('.html', '.jpeg')}`
 }
 
 export default function FunnelBarrel({ funnels, onOpen }: Props) {

@@ -14,15 +14,15 @@ import { profile } from '@/data/profile'
  * visual. Swap the marks below for your own (any square SVG/PNG in public/).
  */
 
-const APPS_SCRIPT = { src: '/icons/brand/googleappsscript.svg', name: 'Google Apps Script' }
-const GWS = { src: '/icons/googleworkspace.svg', name: 'Google Workspace' }
-const SHEETS = { src: '/icons/brand/googlesheets.svg', name: 'Google Sheets' }
-const STRIPE = { src: '/icons/brand/stripe.svg', name: 'Stripe' }
-const GMAIL = { src: '/icons/brand/gmail.svg', name: 'Gmail' }
-const FORMS = { src: '/icons/brand/googleforms.svg', name: 'Google Forms' }
-const DRIVE = { src: '/icons/brand/googledrive.svg', name: 'Google Drive' }
-const ZENDESK = { src: '/icons/brand/zendesk.svg', name: 'Zendesk' }
-const SLACK = { src: '/icons/ai/slack-color.svg', name: 'Slack' }
+const APPS_SCRIPT = { src: 'icons/brand/googleappsscript.svg', name: 'Google Apps Script' }
+const GWS = { src: 'icons/googleworkspace.svg', name: 'Google Workspace' }
+const SHEETS = { src: 'icons/brand/googlesheets.svg', name: 'Google Sheets' }
+const STRIPE = { src: 'icons/brand/stripe.svg', name: 'Stripe' }
+const GMAIL = { src: 'icons/brand/gmail.svg', name: 'Gmail' }
+const FORMS = { src: 'icons/brand/googleforms.svg', name: 'Google Forms' }
+const DRIVE = { src: 'icons/brand/googledrive.svg', name: 'Google Drive' }
+const ZENDESK = { src: 'icons/brand/zendesk.svg', name: 'Zendesk' }
+const SLACK = { src: 'icons/ai/slack-color.svg', name: 'Slack' }
 
 type Capability = {
   index: string

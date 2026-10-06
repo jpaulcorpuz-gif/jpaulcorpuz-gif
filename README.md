@@ -29,6 +29,12 @@ npm run build      # typecheck + production build to dist/
 npm run lint       # ESLint with the TypeScript parser and the React hooks rules
 ```
 
+## Deploy
+
+`.github/workflows/pages.yml` builds the site and publishes it to GitHub Pages on every push to the default branch. One-time setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**. You can also run it by hand from the Actions tab.
+
+The site works at the domain root or under a sub-path (`https://<user>.github.io/<repo>/`): the workflow passes the Pages base path to Vite as `BASE_PATH`. Keep paths to files in `public/` relative (`'icons/x.svg'`, not `'/icons/x.svg'`), and wrap any that go into a CSS `url()` in `asset()` from `src/lib/asset.ts`.
+
 ## Make it yours
 
 Every spot that needs your content says **PLACEHOLDER** and describes what goes there. You can edit the files yourself, or open the repo in an AI coding tool and tell it what to put in each spot.

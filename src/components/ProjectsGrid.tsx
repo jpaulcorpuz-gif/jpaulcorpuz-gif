@@ -42,12 +42,12 @@ const FILTERS: { key: Cat | 'all'; label: string }[] = [
 ]
 
 /** Tool marks, from public/icons. */
-const APPS_SCRIPT = '/icons/brand/googleappsscript.svg'
-const STRIPE = '/icons/brand/stripe.svg'
-const SHEETS = '/icons/brand/googlesheets.svg'
-const GMAIL = '/icons/brand/gmail.svg'
-const ZENDESK = '/icons/brand/zendesk.svg'
-const DRIVE = '/icons/brand/googledrive.svg'
+const APPS_SCRIPT = 'icons/brand/googleappsscript.svg'
+const STRIPE = 'icons/brand/stripe.svg'
+const SHEETS = 'icons/brand/googlesheets.svg'
+const GMAIL = 'icons/brand/gmail.svg'
+const ZENDESK = 'icons/brand/zendesk.svg'
+const DRIVE = 'icons/brand/googledrive.svg'
 
 /** The three smaller builds: each its own card in the stack, each its own
  *  pop-up. */
@@ -58,7 +58,7 @@ const BUILDS: Project[] = [
 ]
 
 const CASE_SHOTS = ['tracker', 'registration', 'student-record', 'registration-cohort'].map(
-  (name) => `/home/work-${name}.webp`,
+  (name) => `home/work-${name}.webp`,
 )
 
 const leaves = (n: StackNode): StackNode[] => (n.children?.length ? n.children.flatMap(leaves) : [n])

@@ -14,11 +14,11 @@ import { aiStack, type StackNode } from '@/data/ai-stack'
 type Tool = { name: string; src: string }
 
 const T = {
-  appsScript: { name: 'Google Apps Script', src: '/icons/brand/googleappsscript.svg' },
-  sheets: { name: 'Google Sheets', src: '/icons/brand/googlesheets.svg' },
-  gmail: { name: 'Gmail', src: '/icons/brand/gmail.svg' },
-  stripe: { name: 'Stripe', src: '/icons/brand/stripe.svg' },
-  drive: { name: 'Google Drive API', src: '/icons/brand/googledrive.svg' },
+  appsScript: { name: 'Google Apps Script', src: 'icons/brand/googleappsscript.svg' },
+  sheets: { name: 'Google Sheets', src: 'icons/brand/googlesheets.svg' },
+  gmail: { name: 'Gmail', src: 'icons/brand/gmail.svg' },
+  stripe: { name: 'Stripe', src: 'icons/brand/stripe.svg' },
+  drive: { name: 'Google Drive API', src: 'icons/brand/googledrive.svg' },
 } satisfies Record<string, Tool>
 
 /** What each system runs on. Keyed by the node id in ai-stack.ts. */
@@ -37,9 +37,9 @@ const TOOLS: Record<string, Tool[]> = {
 
 /** The platforms everything above is built on. */
 const HARNESS: Tool[] = [
-  { name: 'Google Apps Script', src: '/icons/brand/googleappsscript.svg' },
-  { name: 'Google Workspace', src: '/icons/googleworkspace.svg' },
-  { name: 'Stripe', src: '/icons/brand/stripe.svg' },
+  { name: 'Google Apps Script', src: 'icons/brand/googleappsscript.svg' },
+  { name: 'Google Workspace', src: 'icons/googleworkspace.svg' },
+  { name: 'Stripe', src: 'icons/brand/stripe.svg' },
 ]
 
 type Group = { title: string; what: string; systems: StackNode[] }

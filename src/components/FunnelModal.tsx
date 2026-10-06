@@ -12,7 +12,7 @@ import type { Funnel } from '@/data/funnels'
  * contract, one scroll lock.
  */
 export function fullSrc(funnel: Funnel) {
-  return `/${funnel.dir ?? 'funnels'}/${funnel.file}`
+  return `${funnel.dir ?? 'funnels'}/${funnel.file}`
 }
 
 export function useFunnelModal() {

@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { asset } from '@/lib/asset'
 
 /**
  * ToolsMarquee
@@ -38,16 +39,16 @@ type Tool = {
 }
 
 export const tools: Tool[] = [
-  { name: 'Google Apps Script',   iconPath: '/icons/googleappsscript.svg', color: '#4285F4' },
-  { name: 'Google Workspace',     iconPath: '/icons/googleworkspace.svg' },
-  { name: 'Google Sheets',        iconPath: '/icons/googlesheets.svg',    color: '#34A853' },
-  { name: 'Gmail',                iconPath: '/icons/gmail.svg',           color: '#EA4335' },
-  { name: 'Stripe',               iconPath: '/icons/stripe.svg',          color: '#635BFF' },
-  { name: 'Zendesk',              iconPath: '/icons/zendesk.svg',         color: '#03363D' },
-  { name: 'Slack',                iconPath: '/icons/slack.svg',           color: '#611F69' },
-  { name: 'Meta Business Suite',  iconPath: '/icons/meta.svg',            color: '#0467DF' },
-  { name: 'Google Search Console', iconPath: '/icons/googlesearchconsole.svg', color: '#458CF5' },
-  { name: 'VS Code',              iconPath: '/icons/vscode.svg' },
+  { name: 'Google Apps Script',   iconPath: 'icons/googleappsscript.svg', color: '#4285F4' },
+  { name: 'Google Workspace',     iconPath: 'icons/googleworkspace.svg' },
+  { name: 'Google Sheets',        iconPath: 'icons/googlesheets.svg',    color: '#34A853' },
+  { name: 'Gmail',                iconPath: 'icons/gmail.svg',           color: '#EA4335' },
+  { name: 'Stripe',               iconPath: 'icons/stripe.svg',          color: '#635BFF' },
+  { name: 'Zendesk',              iconPath: 'icons/zendesk.svg',         color: '#03363D' },
+  { name: 'Slack',                iconPath: 'icons/slack.svg',           color: '#611F69' },
+  { name: 'Meta Business Suite',  iconPath: 'icons/meta.svg',            color: '#0467DF' },
+  { name: 'Google Search Console', iconPath: 'icons/googlesearchconsole.svg', color: '#458CF5' },
+  { name: 'VS Code',              iconPath: 'icons/vscode.svg' },
 ]
 
 export default function ToolsMarquee() {
@@ -70,7 +71,7 @@ export default function ToolsMarquee() {
                   <span
                     className="tools-marquee__icon"
                     style={{
-                      ['--icon-url' as string]: `url('${tool.iconPath}')`,
+                      ['--icon-url' as string]: `url('${asset(tool.iconPath)}')`,
                       ['--brand-color' as string]: tool.color ?? 'var(--navy)',
                     }}
                   />

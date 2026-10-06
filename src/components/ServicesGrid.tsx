@@ -52,15 +52,15 @@ const STAGES: Stage[] = [
 /* ---------- The services ---------- */
 
 // Tool marks from /public/icons.
-const APPS_SCRIPT = '/icons/brand/googleappsscript.svg'
-const SHEETS = '/icons/brand/googlesheets.svg'
-const GWS = '/icons/googleworkspace.svg'
-const GMAIL = '/icons/brand/gmail.svg'
-const FORMS = '/icons/brand/googleforms.svg'
-const DRIVE = '/icons/brand/googledrive.svg'
-const STRIPE = '/icons/brand/stripe.svg'
-const ZENDESK = '/icons/brand/zendesk.svg'
-const SLACK = '/icons/slack.svg'
+const APPS_SCRIPT = 'icons/brand/googleappsscript.svg'
+const SHEETS = 'icons/brand/googlesheets.svg'
+const GWS = 'icons/googleworkspace.svg'
+const GMAIL = 'icons/brand/gmail.svg'
+const FORMS = 'icons/brand/googleforms.svg'
+const DRIVE = 'icons/brand/googledrive.svg'
+const STRIPE = 'icons/brand/stripe.svg'
+const ZENDESK = 'icons/brand/zendesk.svg'
+const SLACK = 'icons/slack.svg'
 
 type Service = {
   index: string

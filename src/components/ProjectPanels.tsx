@@ -82,7 +82,7 @@ export function PlanPanel() {
         host="Case study"
         path="/student-crm"
       />
-      <LiveFrame src="/case-studies/student-crm.html" title="Student CRM case study" />
+      <LiveFrame src="case-studies/student-crm.html" title="Student CRM case study" />
     </div>
   )
 }
@@ -92,9 +92,9 @@ export function PlanPanel() {
 type Build = { id: string; label: string; src: string; path: string; Icon: Icon }
 
 const BUILDS: Build[] = [
-  { id: 'ticketing', label: 'Enrollment website and Stripe payments', src: '/case-studies/enrollment-site.html', path: '/enrollment-site', Icon: Ticket },
-  { id: 'framework', label: 'Requirement tracking and reminders', src: '/case-studies/requirements.html', path: '/requirements', Icon: Robot },
-  { id: 'workflow', label: 'Customer support', src: '/case-studies/support.html', path: '/support', Icon: FlowArrow },
+  { id: 'ticketing', label: 'Enrollment website and Stripe payments', src: 'case-studies/enrollment-site.html', path: '/enrollment-site', Icon: Ticket },
+  { id: 'framework', label: 'Requirement tracking and reminders', src: 'case-studies/requirements.html', path: '/requirements', Icon: Robot },
+  { id: 'workflow', label: 'Customer support', src: 'case-studies/support.html', path: '/support', Icon: FlowArrow },
 ]
 
 /** One build, framed, open on arrival. */

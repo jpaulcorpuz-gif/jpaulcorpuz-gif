@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react'
 import path from 'node:path'
 
 export default defineConfig({
+  // The path the site is served from. '/' by default; the GitHub Pages
+  // workflow sets BASE_PATH to '/<repo-name>/' for project sites.
+  base: process.env.BASE_PATH || '/',
   plugins: [react()],
   resolve: {
     alias: {

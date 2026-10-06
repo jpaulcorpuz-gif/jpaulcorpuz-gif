@@ -16,7 +16,7 @@ import type { Icon } from '@/components/slab'
  * whichever is playing.
  *
  * To add a video: drop the .mp4 in public/testimonials/, set its `src` below
- * (e.g. '/testimonials/client-1.mp4'), and swap the poster for a still from
+ * (e.g. 'testimonials/client-1.mp4'), and swap the poster for a still from
  * the clip. With `src` empty the cover stays up and play is disabled.
  */
 
@@ -37,7 +37,7 @@ const CLIPS: Clip[] = [
     id: 'clip-1',
     index: '01',
     src: '',
-    poster: '/placeholders/testimonial-1.jpg',
+    poster: 'placeholders/testimonial-1.jpg',
     duration: '0:00',
     kicker: 'Video',
     width: 720,
@@ -47,7 +47,7 @@ const CLIPS: Clip[] = [
     id: 'clip-2',
     index: '02',
     src: '',
-    poster: '/placeholders/testimonial-2.jpg',
+    poster: 'placeholders/testimonial-2.jpg',
     duration: '0:00',
     kicker: 'Video',
     width: 720,

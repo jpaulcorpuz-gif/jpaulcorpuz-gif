@@ -30,7 +30,7 @@ import { aiStack, type StackNode } from '@/data/ai-stack'
 
 // Screens from the CAL ACE system (fictional student data).
 const PROJECT_SHOTS = ['tracker', 'registration', 'student-record', 'registration-cohort'].map(
-  (name) => `/home/work-${name}.webp`,
+  (name) => `home/work-${name}.webp`,
 )
 
 const OFFERS = [
@@ -48,7 +48,7 @@ const CLIENTS: { name: string; role: string; work: string; logo?: string }[] = [
 ]
 
 // Three photos of you, fanned. Small copies are fine - the fan shows them under 100px.
-const PHOTOS = ['/photo-3.webp', '/photo-2.webp', '/photo-1.webp']
+const PHOTOS = ['photo-3.webp', 'photo-2.webp', 'photo-1.webp']
 
 /** The AI systems as a flat list: every leaf of the Projects tree, in order. */
 const leaves = (n: StackNode): StackNode[] =>

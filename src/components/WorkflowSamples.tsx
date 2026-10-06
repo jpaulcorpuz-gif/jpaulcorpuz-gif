@@ -29,7 +29,7 @@ const SAMPLES: Sample[] = [
   { file: 'registration-cohort.webp', label: 'Cohort picker with live seats' },
 ]
 
-const srcOf = (s: Sample) => `/work/${encodeURIComponent(s.file)}`
+const srcOf = (s: Sample) => `work/${encodeURIComponent(s.file)}`
 
 export default function WorkflowSamples() {
   const doubled = useMemo(() => [...SAMPLES, ...SAMPLES], [])

@@ -48,7 +48,7 @@ export const profile: Profile = {
   firstName: 'John Paul',
   handle: '@jpaulcorpuz',
   role: 'CRM Developer · Workflow Automation',
-  avatarSrc: '/avatar.webp',
+  avatarSrc: 'avatar.webp',
   verifiedLabel: 'BS Information Technology, AMA Computer College',
   email: 'jpaul.corpuz@gmail.com',
   location: 'Caloocan City, Philippines',
@@ -63,11 +63,11 @@ export const profile: Profile = {
   displayName: { line1: 'CRMs, automation,', line2: 'and real support.' },
   hero: {
     body: 'I build Google Apps Script CRMs and Stripe automations, and handle the admin and customer support around them.',
-    portraitSrc: '/portrait.webp',
+    portraitSrc: 'portrait.webp',
     portraitAlt: 'Portrait of John Paul Corpuz',
   },
   socials: [
-    { label: 'LinkedIn profile', href: 'https://www.linkedin.com/in/john-paul-corpuz/', iconPath: '/icons/linkedin.svg' },
-    { label: 'Facebook profile', href: 'https://www.facebook.com/paul.corpuzii.5', iconPath: '/icons/facebook.svg' },
+    { label: 'LinkedIn profile', href: 'https://www.linkedin.com/in/john-paul-corpuz/', iconPath: 'icons/linkedin.svg' },
+    { label: 'Facebook profile', href: 'https://www.facebook.com/paul.corpuzii.5', iconPath: 'icons/facebook.svg' },
   ],
 }

@@ -52,10 +52,10 @@ export type StackNode = {
   children?: StackNode[]
 }
 
-const APPS_SCRIPT: StackLogo = { src: '/icons/googleappsscript.svg', name: 'Google Apps Script' }
-const SHEETS: StackLogo = { src: '/icons/googlesheets.svg', name: 'Google Sheets' }
-const GMAIL: StackLogo = { src: '/icons/gmail.svg', name: 'Gmail' }
-const STRIPE: StackLogo = { src: '/icons/stripe.svg', name: 'Stripe' }
+const APPS_SCRIPT: StackLogo = { src: 'icons/googleappsscript.svg', name: 'Google Apps Script' }
+const SHEETS: StackLogo = { src: 'icons/googlesheets.svg', name: 'Google Sheets' }
+const GMAIL: StackLogo = { src: 'icons/gmail.svg', name: 'Gmail' }
+const STRIPE: StackLogo = { src: 'icons/stripe.svg', name: 'Stripe' }
 
 /** Single root: you. Branches are the categories. */
 export const aiStack: StackNode = {

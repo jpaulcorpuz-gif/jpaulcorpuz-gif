@@ -17,14 +17,14 @@ const EXTENSIONS: Extension[] = [
   {
     name: 'Extension Name One',
     desc: 'PLACEHOLDER - tell me what to put here: what the extension does and who uses it.',
-    imageSrc: '/placeholders/extension-1.jpg',
+    imageSrc: 'placeholders/extension-1.jpg',
     imageAlt: 'Extension one popup placeholder',
     Icon: Key,
   },
   {
     name: 'Extension Name Two',
     desc: 'PLACEHOLDER - tell me what to put here: what the extension does and who uses it.',
-    imageSrc: '/placeholders/extension-2.jpg',
+    imageSrc: 'placeholders/extension-2.jpg',
     imageAlt: 'Extension two popup placeholder',
     Icon: Browser,
   },

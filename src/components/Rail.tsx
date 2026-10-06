@@ -12,6 +12,7 @@ import {
 } from './RailIcons'
 import { getTheme, toggleTheme, type Theme } from '@/lib/theme'
 import { profile } from '@/data/profile'
+import { asset } from '@/lib/asset'
 
 /**
  * The profile rail: the fixed left column of the shell. It carries identity,
@@ -75,7 +76,7 @@ export default function Rail() {
                     CSS mask - same technique as the hero's social row. */}
                 <span
                   className="rail__social-icon"
-                  style={{ ['--icon-url' as string]: `url('${iconPath}')` }}
+                  style={{ ['--icon-url' as string]: `url('${asset(iconPath)}')` }}
                   aria-hidden="true"
                 />
               </a>

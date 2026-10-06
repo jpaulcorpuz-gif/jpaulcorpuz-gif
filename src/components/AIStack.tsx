@@ -9,6 +9,7 @@ import {
 } from 'react'
 import { CaretDown, Circle } from '@/components/slab'
 import { aiStack, type StackNode } from '@/data/ai-stack'
+import { asset } from '@/lib/asset'
 
 /**
  * AIStack - the top-down tree of systems.
@@ -365,7 +366,7 @@ export default function AIStack({ root = aiStack }: { root?: StackNode }) {
                 <span
                   key={logo.src}
                   className="ai-stack__logo"
-                  style={{ ['--logo-mask' as string]: `url('${logo.src}')` }}
+                  style={{ ['--logo-mask' as string]: `url('${asset(logo.src)}')` }}
                   role="img"
                   aria-label={logo.name}
                 />
